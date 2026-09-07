@@ -17,7 +17,7 @@ const TARUNA = {
   nama: "MUHAMMAD RADHITYA BHARA KUNTARA",
   noakad: "200507014166",
   tonki: "2/B",
-  tk: "II",
+  tk: "III",
   dantontar: "IMAM SANTOSO, S.H.",
   pangkat_dantontar: "IPDA",
   nrp_dantontar: "82020196",
@@ -27,125 +27,347 @@ const TARUNA = {
 };
 
 const NSP_ITEMS = [
+  // ── B1: KEIMANAN & KETAQWAAN ──────────────────────────────────────────────
   {
-    id: "b1a1", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Sholat fardhu berjamaah di Masjid Akpol (maks per bulan)",
-    poin: 0.4, pemberi: "PAWASYON", lhp: false,
-    keterangan: "Otomatis dari kegiatan harian, tidak perlu LHP terpisah",
+    id: "b1b2_4x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Imam/mentor/pemimpin ibadah dalam kegiatan agama (≥4×/bulan)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP min 10 taruna (dalam/luar Akpol). Dokumentasi peserta wajib.",
   },
   {
-    id: "b1a2", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Ibadah sunnah/tahajud ≥4× sebulan",
-    poin: 0.4, pemberi: "PAWASYON", lhp: false,
-    keterangan: "",
+    id: "b1b2_3x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Imam/mentor/pemimpin ibadah dalam kegiatan agama (3×/bulan)",
+    poin: 0.25, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP min 10 taruna.",
   },
   {
-    id: "b1b1", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Aktif peserta majelis ilmu keagamaan/pengajian (≥4×)",
-    poin: 0.44, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Dokumentasi peserta min 10 orang, foto bersama pemimpin ibadah, resume materi",
+    id: "b1b2_2x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Imam/mentor/pemimpin ibadah dalam kegiatan agama (2×/bulan)",
+    poin: 0.17, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP min 10 taruna.",
   },
   {
-    id: "b1b2", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Menjadi Imam/mentor/pemimpin ibadah dalam kegiatan agama (≥4×)",
-    poin: 0.44, pemberi: "PAWASYON", lhp: true,
-    keterangan: "LHP dan dokumentasi terlampir (kegiatan di dalam Akpol), PDL boleh",
+    id: "b1b2_1x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Imam/mentor/pemimpin ibadah dalam kegiatan agama (1×/bulan)",
+    poin: 0.08, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP min 10 taruna.",
   },
   {
-    id: "b1b3", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Mengajak Taruna junior ibadah di luar Akpol (pesiar/IBL/cuti)",
-    poin: 0.27, pemberi: "DANKITAR", lhp: true,
-    keterangan: "Kegiatan di luar Akpol, sertakan laporan dan dokumentasi",
+    id: "b1b3_2x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Mengajak Taruna junior ibadah di luar Akpol (≥2×/bulan)",
+    poin: 0.33, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP min 10 taruna. Kegiatan saat pesiar/IBL/cuti.",
   },
   {
-    id: "b1c2", cat: "B1 – Keimanan & Ketaqwaan",
-    nama: "Terlibat kepanitiaan/pengurus hari besar keagamaan (≥1×)",
-    poin: 0.44, pemberi: "DANKITAR", lhp: true,
-    keterangan: "Jika di luar Akpol: surat dari pengurus tempat ibadah. Foto, LHP, SPRINT wajib",
+    id: "b1b3_1x", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Mengajak Taruna junior ibadah di luar Akpol (1×/bulan)",
+    poin: 0.25, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP min 10 taruna. Kegiatan saat pesiar/IBL/cuti.",
   },
   {
-    id: "b2a4", cat: "B2 – Cinta Tanah Air",
-    nama: "Mempelajari kesenian/budaya daerah lain (≥1×)",
-    poin: 0.3, pemberi: "DANTONTAR", lhp: true,
-    keterangan: "Sertakan foto dan resume minimal 1 halaman terkait budaya/kesenian yang dipelajari",
+    id: "b1c3", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Korve bersama di tempat ibadah agama berbeda (≥1×/bulan)",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP wajib disertakan.",
   },
   {
-    id: "b2a5", cat: "B2 – Cinta Tanah Air",
-    nama: "Melaporkan hal yang membahayakan/merugikan negara (≥1×)",
-    poin: 0.3, pemberi: "DANKITAR", lhp: true,
-    keterangan: "Uraian LHP harus jelas, perihal bahaya/kerugian negara, disertai dokumentasi",
+    id: "b1d1", cat: "B1 – Keimanan & Ketaqwaan",
+    nama: "Membuat ide implementasi nilai imtaq dalam tulisan (diketik)",
+    poin: 1.0, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B2: CINTA TANAH AIR ───────────────────────────────────────────────────
+  {
+    id: "b2a2", cat: "B2 – Cinta Tanah Air",
+    nama: "Petugas/deputasi upacara sesuai sprin dinas (hafal ≥4 item)",
+    poin: 0.2, pemberi: "DANTONTAR", lhp: false,
+    keterangan: "Poin diberikan jika hafal 4 item atau lebih.",
   },
   {
     id: "b2b1", cat: "B2 – Cinta Tanah Air",
-    nama: "Artikel/tulisan bertema nasionalisme (1×)",
-    poin: 0.75, pemberi: "DANKITAR", lhp: true,
-    keterangan: "Artikel narasi bertema nasionalisme, diketik, lampirkan turnitin maks 20%",
+    nama: "Tulisan/artikel bertema nasionalisme (1×/bulan)",
+    poin: 0.5, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP tulisan tangan min 2 halaman folio. Gunakan bahasa Indonesia yang baik dan benar.",
   },
   {
     id: "b2b2", cat: "B2 – Cinta Tanah Air",
-    nama: "Menampilkan kesenian/budaya dari daerah lain (1×)",
-    poin: 0.75, pemberi: "DANTONTAR", lhp: true,
-    keterangan: "Sertakan foto penampilan pada acara/event",
+    nama: "Menampilkan kesenian/budaya dari daerah lain (1×/bulan)",
+    poin: 0.5, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP wajib. Sertakan foto penampilan.",
   },
+  {
+    id: "b2c1", cat: "B2 – Cinta Tanah Air",
+    nama: "Membuat ide implementasi nilai cinta tanah air (tulisan)",
+    poin: 1.0, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP. Mampu mendesain kegiatan peningkatan karakter untuk taruna dan masyarakat.",
+  },
+  // ── B3: DEMOKRASI ─────────────────────────────────────────────────────────
   {
     id: "b3a2", cat: "B3 – Demokrasi",
-    nama: "Aktif menyampaikan pendapat di forum resmi (≥1×)",
+    nama: "Aktif menyampaikan pendapat di forum resmi/arahan pimpinan (≥1×)",
+    poin: 0.17, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Forum lingkup detasemen dan kompi. 1× atau lebih dalam sebulan.",
+  },
+  {
+    id: "b3b1", cat: "B3 – Demokrasi",
+    nama: "Membuat ide implementasi nilai demokrasi (diketik)",
+    poin: 0.25, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B4: DISIPLIN ──────────────────────────────────────────────────────────
+  {
+    id: "b4a1", cat: "B4 – Disiplin",
+    nama: "Tidak melanggar peraturan selama sebulan penuh",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Menepati semua peraturan & kegiatan selama sebulan.",
+  },
+  {
+    id: "b4a2_tlb", cat: "B4 – Disiplin",
+    nama: "Terlambat hanya 1× dalam sebulan",
+    poin: 0.17, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Poin pengganti jika terlambat 1 kali.",
+  },
+  {
+    id: "b4a3_4x", cat: "B4 – Disiplin",
+    nama: "Mendapat pujian PUD dari pengasuh (≥4×/bulan)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Pujian 4 kali atau lebih dalam sebulan.",
+  },
+  {
+    id: "b4a3_3x", cat: "B4 – Disiplin",
+    nama: "Mendapat pujian PUD dari pengasuh (3×/bulan)",
+    poin: 0.25, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Pujian 3 kali dalam sebulan.",
+  },
+  {
+    id: "b4a3_2x", cat: "B4 – Disiplin",
+    nama: "Mendapat pujian PUD dari pengasuh (2×/bulan)",
+    poin: 0.17, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Pujian 2 kali dalam sebulan.",
+  },
+  {
+    id: "b4a3_1x", cat: "B4 – Disiplin",
+    nama: "Mendapat pujian PUD dari pengasuh (1×/bulan)",
+    poin: 0.08, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Pujian 1 kali dalam sebulan.",
+  },
+  {
+    id: "b4b1", cat: "B4 – Disiplin",
+    nama: "Membuat ide implementasi nilai disiplin (diketik)",
+    poin: 0.5, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B5: KERJA KERAS & CERDAS ──────────────────────────────────────────────
+  {
+    id: "b5a1_2x", cat: "B5 – Kerja Keras & Cerdas",
+    nama: "Belajar mandiri di luar jadwal + resume/ringkasan materi (≥2×)",
     poin: 0.33, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Dokumentasi saat menyampaikan pendapat atau foto buku saku pujian",
+    keterangan: "LHP wajib. Resume/ringkasan materi segera setelah kegiatan.",
   },
   {
-    id: "b5a1", cat: "B5 – Kerja Keras & Cerdas",
-    nama: "Belajar mandiri di luar jadwal + resume (≥2×)",
-    poin: 0.4, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Dokumentasi saat belajar, resume minimal 2 halaman folio",
+    id: "b5a1_1x", cat: "B5 – Kerja Keras & Cerdas",
+    nama: "Belajar mandiri di luar jadwal + resume/ringkasan materi (1×)",
+    poin: 0.17, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP wajib.",
   },
   {
-    id: "b5a2", cat: "B5 – Kerja Keras & Cerdas",
+    id: "b5a2_2x", cat: "B5 – Kerja Keras & Cerdas",
     nama: "Belajar mandiri di perpustakaan/beli buku + resume (≥2×)",
-    poin: 0.4, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Dokumentasi buku, diserahkan ke batalyon untuk perpustakaan, resume min 2 hal folio",
+    poin: 0.33, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP wajib. Dokumentasi buku, resume min 2 halaman folio.",
   },
   {
-    id: "b5a3", cat: "B5 – Kerja Keras & Cerdas",
-    nama: "Kelompok belajar mandiri/penelitian/diskusi (≥2×)",
-    poin: 0.4, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Ada SPRIN tim/kelompok belajar",
+    id: "b5a2_1x", cat: "B5 – Kerja Keras & Cerdas",
+    nama: "Belajar mandiri di perpustakaan/beli buku + resume (1×)",
+    poin: 0.17, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP wajib.",
   },
   {
     id: "b5a4", cat: "B5 – Kerja Keras & Cerdas",
-    nama: "Membantu giat operasi kepolisian (gatur lalin, TPTKP, dll)",
-    poin: 0.4, pemberi: "DANTONTAR", lhp: true,
-    keterangan: "Dokumentasi didampingi personil Polri, uraian LHP lengkap: lokasi, waktu, tempat, nama personil, bentuk kegiatan",
+    nama: "Membantu giat operasi kepolisian (gatur lalin, TPTKP, sosialisasi harkamtibmas, dll)",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP. Dokumentasi didampingi personil Polri. Uraian lengkap: lokasi, waktu, nama personil, bentuk kegiatan.",
   },
   {
     id: "b5a5", cat: "B5 – Kerja Keras & Cerdas",
-    nama: "Olahraga mandiri + lapor pawas ATAU turun BB min 2 kg",
-    poin: 0.4, pemberi: "DANTONTAR", lhp: false,
-    keterangan: "Poin untuk Taruna BB ideal atau OW yang berhasil turun 2 kg",
+    nama: "Olahraga mandiri di luar jadwal rutin (≥2×) ATAU turun BB min 2 kg",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP. Laporkan kepada pawas sebelumnya, atau sertakan bukti penurunan berat badan.",
   },
   {
-    id: "b6a2", cat: "B6 – Profesional",
-    nama: "Mengunjungi kesatuan Polri (cuti/pesiar) + laporan teknis (1×)",
+    id: "b5a6", cat: "B5 – Kerja Keras & Cerdas",
+    nama: "Pemetaan kekuatan & kelemahan diri / portofolio diri (diketik)",
     poin: 0.33, pemberi: "DANKITAR", lhp: true,
-    keterangan: "LHP berisi dokumentasi, waktu, tempat, pejabat yang ditemui, produk tertulis situasi lapangan sesuai materi kuliah",
+    keterangan: "LHP diketik. 1× atau lebih dalam sebulan.",
   },
+  // ── B6: PROFESIONAL ──────────────────────────────────────────────────────
+  {
+    id: "b6a1", cat: "B6 – Profesional",
+    nama: "Buku panduan/diktat/SOP mandiri atau ide terobosan kreatif (tulis tangan)",
+    poin: 0.33, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP tulis tangan min 2 halaman folio. 1× atau lebih dalam sebulan.",
+  },
+  {
+    id: "b6a2_2x", cat: "B6 – Profesional",
+    nama: "Mengunjungi kesatuan kepolisian di luar kampus + laporan teknis (≥2×)",
+    poin: 0.33, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP. Berisi dokumentasi, waktu, tempat, pejabat yang ditemui, laporan teknis sesuai materi kuliah.",
+  },
+  {
+    id: "b6a2_1x", cat: "B6 – Profesional",
+    nama: "Mengunjungi kesatuan kepolisian di luar kampus + laporan teknis (1×)",
+    poin: 0.17, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP. Berisi dokumentasi, waktu, tempat, pejabat yang ditemui.",
+  },
+  {
+    id: "b6b1", cat: "B6 – Profesional",
+    nama: "Prestasi nilai mental terbaik detasemen (10 besar/semester)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "10 terbaik tiap semester.",
+  },
+  {
+    id: "b6b2", cat: "B6 – Profesional",
+    nama: "Prestasi nilai jasmani terbaik detasemen (10 besar/semester)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "10 terbaik tiap semester.",
+  },
+  {
+    id: "b6b3", cat: "B6 – Profesional",
+    nama: "Tidak her akademik dalam satu semester",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Tidak her akademik selama satu semester.",
+  },
+  // ── B7: SEDERHANA ────────────────────────────────────────────────────────
+  {
+    id: "b7c1", cat: "B7 – Sederhana",
+    nama: "Membuat ide implementasi nilai sederhana (diketik)",
+    poin: 0.17, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B8: EMPATI ───────────────────────────────────────────────────────────
   {
     id: "b8a1", cat: "B8 – Empati",
-    nama: "Menjenguk Taruna/antap Akpol sakit di KSA/RS (≥1×)",
-    poin: 0.67, pemberi: "PAWASYON", lhp: true,
-    keterangan: "Dokumentasi bersama yang sakit. Uraian LHP: waktu, tempat, nama Taruna/antap yang sakit",
+    nama: "Menjenguk Taruna/antap Akpol sakit di KSA/RS rujukan (≥1×)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: true,
+    keterangan: "LHP. Dokumentasi bersama yang sakit. Uraian: waktu, tempat, nama Taruna/antap yang sakit.",
   },
   {
     id: "b8a2", cat: "B8 – Empati",
-    nama: "Baksos/donor darah atas inisiatif sendiri (≥1×)",
-    poin: 0.67, pemberi: "DANTONTAR", lhp: true,
-    keterangan: "Dokumentasi saat penyerahan baksos. Paket baksos harus ada tulisan BAKSOS (NAMA BATALYON)",
+    nama: "Baksos inisiatif sendiri (biaya pribadi) / donor darah (≥1×)",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP. Dokumentasi saat penyerahan. Paket baksos bertuliskan BAKSOS (NAMA BATALYON).",
   },
   {
     id: "b8a3", cat: "B8 – Empati",
-    nama: "Berkunjung ke rumah pejabat Akpol min Kombes Pol (≥1×)",
-    poin: 0.67, pemberi: "DANTONTAR", lhp: true,
-    keterangan: "Dokumentasi terlampir, di luar jam pengasuhan",
+    nama: "Berkunjung ke rumah pejabat Akpol (≥1×)",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: true,
+    keterangan: "LHP. Dokumentasi terlampir. Di luar jam pengasuhan.",
+  },
+  {
+    id: "b8b1", cat: "B8 – Empati",
+    nama: "Membuat ide implementasi nilai empati (diketik)",
+    poin: 0.5, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B9: JUJUR & IKHLAS ───────────────────────────────────────────────────
+  {
+    id: "b9b1", cat: "B9 – Jujur & Ikhlas",
+    nama: "Membuat ide implementasi nilai jujur & ikhlas (diketik)",
+    poin: 1.0, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B10: ADIL ────────────────────────────────────────────────────────────
+  {
+    id: "b10b1", cat: "B10 – Adil",
+    nama: "Membuat ide implementasi nilai adil (diketik)",
+    poin: 0.5, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× atau lebih dalam sebulan.",
+  },
+  // ── B11: TELADAN ─────────────────────────────────────────────────────────
+  {
+    id: "b11a1_1", cat: "B11 – Teladan",
+    nama: "NSP terbaik 1 per satuan bulan ini",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Mendapatkan nilai NSP 3 (tiga) terbaik setiap bulan per satuan.",
+  },
+  {
+    id: "b11a1_2", cat: "B11 – Teladan",
+    nama: "NSP terbaik 2 per satuan bulan ini",
+    poin: 0.25, pemberi: "PAWASYON", lhp: false,
+    keterangan: "",
+  },
+  {
+    id: "b11a1_3", cat: "B11 – Teladan",
+    nama: "NSP terbaik 3 per satuan bulan ini",
+    poin: 0.17, pemberi: "PAWASYON", lhp: false,
+    keterangan: "",
+  },
+  {
+    id: "b11a2_4x", cat: "B11 – Teladan",
+    nama: "Penilaian positif atas kinerja sebagai pejabat korp (≥4×)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "4 kali atau lebih dalam sebulan.",
+  },
+  {
+    id: "b11a3_2x", cat: "B11 – Teladan",
+    nama: "Pujian penampilan baik/rapih saat apel TI/pemeriksaan (≥2×)",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Pujian 2 kali atau lebih dalam sebulan.",
+  },
+  {
+    id: "b11b1_15", cat: "B11 – Teladan",
+    nama: "Sosiometri peringkat 1–5 terbaik setingkat detasemen",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Masuk peringkat 20 besar sosiometri setingkat detasemen.",
+  },
+  {
+    id: "b11b1_610", cat: "B11 – Teladan",
+    nama: "Sosiometri peringkat 6–10 terbaik setingkat detasemen",
+    poin: 0.25, pemberi: "PAWASYON", lhp: false,
+    keterangan: "",
+  },
+  {
+    id: "b11b2_1", cat: "B11 – Teladan",
+    nama: "Sosiometri peringkat 1 terbaik setingkat satuan",
+    poin: 0.33, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Masuk peringkat 3 besar sosiometri setingkat satuan.",
+  },
+  // ── B12: INTEGRITAS ──────────────────────────────────────────────────────
+  {
+    id: "b12a1", cat: "B12 – Integritas",
+    nama: "Konsisten tidak melanggar peraturan selama 2 bulan berturut-turut",
+    poin: 0.66, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Selalu konsisten dan tidak melanggar semua peraturan selama 2 bulan berturut-turut.",
+  },
+  {
+    id: "b12a2_naik", cat: "B12 – Integritas",
+    nama: "Nilai NSP bulan berikutnya meningkat",
+    poin: 0.66, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Nilai NSP bulan berikutnya mengalami kenaikan.",
+  },
+  {
+    id: "b12a2_tetap", cat: "B12 – Integritas",
+    nama: "Nilai NSP tetap (sama dengan bulan sebelumnya)",
+    poin: 0.38, pemberi: "PAWASYON", lhp: false,
+    keterangan: "Nilai NSP sama dengan bulan sebelumnya.",
+  },
+  {
+    id: "b12a3_latihan", cat: "B12 – Integritas",
+    nama: "Melaksanakan deputasi (memerlukan latihan) ≥1×/bulan",
+    poin: 0.66, pemberi: "DANTONTAR", lhp: false,
+    keterangan: "1 kali atau lebih dalam sebulan — deputasi yang memerlukan latihan.",
+  },
+  {
+    id: "b12a3_biasa", cat: "B12 – Integritas",
+    nama: "Melaksanakan deputasi (tidak memerlukan latihan) ≥1×/bulan",
+    poin: 0.33, pemberi: "DANTONTAR", lhp: false,
+    keterangan: "1 kali atau lebih dalam sebulan — deputasi tanpa latihan.",
+  },
+  {
+    id: "b12b1", cat: "B12 – Integritas",
+    nama: "Membuat ide implementasi nilai integritas (diketik)",
+    poin: 1.0, pemberi: "DANKITAR", lhp: true,
+    keterangan: "LHP diketik min 3 halaman. 1× dalam sebulan.",
   },
 ];
 
@@ -727,7 +949,7 @@ async function generateAndDownloadDocx(fields) {
             verticalAlign: VerticalAlign.CENTER,
             children: [
               para([B("RESIMEN KORPS TARUNA DAN SISWA", 22)]),
-              para([B("DETASEMEN TARUNA TK II/59/BD", 22)]),
+              para([B("DETASEMEN TARUNA TK III/60/BD", 22)]),
             ],
           }),
         ],
@@ -814,7 +1036,7 @@ async function generateAndDownloadDocx(fields) {
 
   // URAIAN KEGIATAN: header merah bold underline CENTER + isi konten
   const uraianFullText =
-    `PADA HARI ${hari} TANGGAL ${tglFmtUpper}, SAYA MUHAMMAD RADHITYA BHARA KUNTARA TARUNA AKPOL/PANGKAT NO.AK 200507014166 TK. II/59/BD TELAH MELAKSANAKAN KEGIATAN ${namaKegiatan} DI ${tempatUp}. ${uraianUp}`;
+    `PADA HARI ${hari} TANGGAL ${tglFmtUpper}, SAYA MUHAMMAD RADHITYA BHARA KUNTARA TARUNA AKPOL/PANGKAT NO.AK 200507014166 TK. III/60/BD TELAH MELAKSANAKAN KEGIATAN ${namaKegiatan} DI ${tempatUp}. ${uraianUp}`;
   const uraianTable = new Table({
     width: { size: 8937, type: WidthType.DXA },
     columnWidths: [8937],
@@ -845,7 +1067,7 @@ async function generateAndDownloadDocx(fields) {
     rows: [
       new TableRow({
         children: [
-          new TableCell({ borders: noBorder, width: { size: sigColW, type: WidthType.DXA }, margins: { top: 40, bottom: 0, left: 0, right: 0 }, children: [para([R("Mengetahui,")]), para([R("DANTONTAR 2B TARUNA TK II/59/BD")])] }),
+          new TableCell({ borders: noBorder, width: { size: sigColW, type: WidthType.DXA }, margins: { top: 40, bottom: 0, left: 0, right: 0 }, children: [para([R("Mengetahui,")]), para([R("DANTONTAR 2B TARUNA TK III/60/BD")])] }),
           new TableCell({ borders: noBorder, width: { size: sigColW, type: WidthType.DXA }, margins: { top: 40, bottom: 0, left: 120, right: 0 }, children: [para([R(`${kota}, ${tglLaporanFmt}`)], { alignment: AlignmentType.CENTER }), para([R("YANG MEMBUAT")], { alignment: AlignmentType.CENTER })] }),
         ],
       }),
@@ -904,7 +1126,7 @@ async function generateAndDownloadDocx(fields) {
           headerSatuanTable,
           garisTable,
           blank(),
-          para([B("LAPORAN HASIL PELAKSANAAN KEGIATAN TARUNA TK. II/59/BD", 24)], { alignment: AlignmentType.CENTER }),
+          para([B("LAPORAN HASIL PELAKSANAAN KEGIATAN TARUNA TK. III/60/BD", 24)], { alignment: AlignmentType.CENTER }),
           blank(),
           headerTable,
           blank(),
@@ -916,7 +1138,7 @@ async function generateAndDownloadDocx(fields) {
           blank(),
           blank(),
           para([R("Mengetahui,")]),
-          para([R("DANKITAR B TARUNA TK II/59/BD")]),
+          para([R("DANKITAR B TARUNA TK III/60/BD")]),
           blank(),
           blank(),
           blank(),
@@ -1012,7 +1234,6 @@ function FormPage() {
         pangkatDantontar, nrpDantontar,
         pangkatDankitar, nrpDankitar,
       });
-
       setDone(true);
       setTimeout(() => setDone(false), 5000);
     } catch (e) {
@@ -1317,7 +1538,7 @@ function LHPPreview({ data }) {
     photos,
   } = data;
 
-  const uraianFullText = `PADA HARI ${hari} TANGGAL ${tglFmtUpper}, SAYA MUHAMMAD RADHITYA BHARA KUNTARA TARUNA AKPOL/PANGKAT NO.AK 200507014166 TK. II/59/BD TELAH MELAKSANAKAN KEGIATAN ${namaKegiatan} DI ${tempatUp}. ${uraianUp}`;
+  const uraianFullText = `PADA HARI ${hari} TANGGAL ${tglFmtUpper}, SAYA MUHAMMAD RADHITYA BHARA KUNTARA TARUNA AKPOL/PANGKAT NO.AK 200507014166 TK. III/60/BD TELAH MELAKSANAKAN KEGIATAN ${namaKegiatan} DI ${tempatUp}. ${uraianUp}`;
 
   const pv = {
     // Kertas A4 putih
@@ -1395,7 +1616,7 @@ function LHPPreview({ data }) {
         </div>
         <div style={pv.satuanText}>
           <div style={pv.satuanLine}>RESIMEN KORPS TARUNA DAN SISWA</div>
-          <div style={pv.satuanLine}>DETASEMEN TARUNA TK II/59/BD</div>
+          <div style={pv.satuanLine}>DETASEMEN TARUNA TK III/60/BD</div>
         </div>
       </div>
 
@@ -1404,7 +1625,7 @@ function LHPPreview({ data }) {
 
       {/* Judul */}
       <div style={pv.judulCenter}>
-        LAPORAN HASIL PELAKSANAAN KEGIATAN TARUNA TK. II/59/BD
+        LAPORAN HASIL PELAKSANAAN KEGIATAN TARUNA TK. III/60/BD
       </div>
 
       {/* Tabel identitas */}
@@ -1453,7 +1674,7 @@ function LHPPreview({ data }) {
       <div style={pv.sigRow}>
         <div style={pv.sigCell}>
           <div>Mengetahui,</div>
-          <div>DANTONTAR 2B TARUNA TK II/59/BD</div>
+          <div>DANTONTAR 2B TARUNA TK III/60/BD</div>
           <div style={pv.sigSpacer} />
           <div style={pv.sigName}>{TARUNA.dantontar}</div>
           <div style={pv.sigNrp}>{pangkatDantontar} NRP {nrpDantontar}</div>
@@ -1470,7 +1691,7 @@ function LHPPreview({ data }) {
       {/* Dankitar */}
       <div style={pv.dankitarBlock}>
         <div>Mengetahui,</div>
-        <div>DANKITAR B TARUNA TK II/59/BD</div>
+        <div>DANKITAR B TARUNA TK III/60/BD</div>
         <div style={{ height: 36 }} />
         <div style={pv.sigName}>{TARUNA.dankitar}</div>
         <div style={pv.sigNrp}>{pangkatDankitar} NRP {nrpDankitar}</div>
@@ -1498,1036 +1719,6 @@ function LHPPreview({ data }) {
   );
 }
 
-
-// ─── TOTAL NSP PAGE ──────────────────────────────────────────────────────────
-
-// ─── TEGURAN TYPES ───────────────────────────────────────────────────────────
-
-const TEGURAN_TYPES = [
-  { id: "tl", nama: "Teguran Lisan", pengurangan: 0.5 },
-  { id: "tt", nama: "Teguran Tertulis", pengurangan: 1.0 },
-  { id: "sp1", nama: "Surat Peringatan 1 (SP1)", pengurangan: 2.0 },
-  { id: "sp2", nama: "Surat Peringatan 2 (SP2)", pengurangan: 3.0 },
-  { id: "sp3", nama: "Surat Peringatan 3 (SP3)", pengurangan: 5.0 },
-  { id: "hd", nama: "Hukuman Disiplin", pengurangan: 7.0 },
-  { id: "custom", nama: "Pengurangan Lain", pengurangan: 0 },
-];
-
-// ─── TOTAL NSP PAGE ──────────────────────────────────────────────────────────
-
-function TotalNSPPage({ checked, monthExtras, onUpdateExtras }) {
-  const lhpItems = NSP_ITEMS.filter((x) => x.lhp);
-  const nonLhpItems = NSP_ITEMS.filter((x) => !x.lhp);
-  const lhpMaxPoin = lhpItems.reduce((s, x) => s + x.poin, 0);
-  const nonLhpMaxPoin = nonLhpItems.reduce((s, x) => s + x.poin, 0);
-
-  const NILAI_DASAR = 70;
-  const NILAI_TANPA_TEGURAN = 1;
-  const NILAI_SIKAP_PENGASUH_DEFAULT = 10;
-
-  const [selMonth, setSelMonth] = useState(null); // null = overview, index = detail bulan
-  const [showAddTeguran, setShowAddTeguran] = useState(false);
-  const [newTeguranType, setNewTeguranType] = useState("tl");
-  const [newTeguranKet, setNewTeguranKet] = useState("");
-  const [newTeguranNilai, setNewTeguranNilai] = useState("");
-  const [newTeguranTgl, setNewTeguranTgl] = useState("");
-
-  // Build per-month full NSP calculation
-  const monthlyFull = MONTHS.map((m, i) => {
-    const mc = checked[m.key] || {};
-    const ext = monthExtras[m.key] || {};
-    const poinLHP = lhpItems.reduce((s, it) => s + (mc[it.id] ? it.poin : 0), 0);
-    const countLHP = lhpItems.filter((it) => mc[it.id]).length;
-    const teguranList = ext.teguran || [];
-    const totalPengurangan = teguranList.reduce((s, t) => s + (t.pengurangan || 0), 0);
-    const hasTeguran = teguranList.length > 0;
-    const nilaiPengasuh = ext.nilaiPengasuh !== undefined ? ext.nilaiPengasuh : NILAI_SIKAP_PENGASUH_DEFAULT;
-    const bonusTanpaTeguran = hasTeguran ? 0 : NILAI_TANPA_TEGURAN;
-
-    const totalBulan = NILAI_DASAR + bonusTanpaTeguran + nilaiPengasuh + poinLHP - totalPengurangan;
-
-    return {
-      month: m, idx: i, poinLHP, countLHP,
-      nilaiDasar: NILAI_DASAR,
-      bonusTanpaTeguran,
-      nilaiPengasuh,
-      teguranList,
-      totalPengurangan,
-      totalBulan: Math.max(0, totalBulan),
-    };
-  });
-
-  // Average NSP across all months that have passed or are current
-  const activeMonths = monthlyFull.filter((md, i) => i <= todayDate.getMonth());
-  const avgNSP = activeMonths.length > 0 ? activeMonths.reduce((s, md) => s + md.totalBulan, 0) / activeMonths.length : 0;
-
-  // Handlers
-  const handleNilaiPengasuh = (monthKey, val) => {
-    const num = parseFloat(val);
-    if (isNaN(num) && val !== "") return;
-    onUpdateExtras(monthKey, { nilaiPengasuh: val === "" ? NILAI_SIKAP_PENGASUH_DEFAULT : num });
-  };
-
-  const handleAddTeguran = (monthKey) => {
-    const type = TEGURAN_TYPES.find((t) => t.id === newTeguranType);
-    const pengurangan = newTeguranType === "custom" ? (parseFloat(newTeguranNilai) || 0) : type.pengurangan;
-    const teguran = {
-      id: Date.now().toString(36),
-      type: type.nama,
-      pengurangan,
-      keterangan: newTeguranKet,
-      tanggal: newTeguranTgl,
-    };
-    const ext = monthExtras[monthKey] || {};
-    const list = [...(ext.teguran || []), teguran];
-    onUpdateExtras(monthKey, { teguran: list });
-    setNewTeguranKet("");
-    setNewTeguranNilai("");
-    setNewTeguranTgl("");
-    setShowAddTeguran(false);
-  };
-
-  const handleRemoveTeguran = (monthKey, teguranId) => {
-    const ext = monthExtras[monthKey] || {};
-    const list = (ext.teguran || []).filter((t) => t.id !== teguranId);
-    onUpdateExtras(monthKey, { teguran: list });
-  };
-
-  // ── OVERVIEW MODE ──
-  if (selMonth === null) {
-    const maxTotal = Math.max(...monthlyFull.map((d) => d.totalBulan), 1);
-
-    return (
-      <div>
-        {/* Summary cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 20 }}>
-          <div style={S.statCard}>
-            <div style={S.statLabel}>RATA-RATA NSP</div>
-            <div style={S.statValue}>{avgNSP.toFixed(2)}</div>
-            <div style={{ fontSize: 11, color: avgNSP >= 75 ? COLORS.success : avgNSP >= 70 ? COLORS.warning : COLORS.danger, marginTop: 4, fontWeight: 600 }}>
-              {avgNSP >= 80 ? "Sangat Baik" : avgNSP >= 75 ? "Baik" : avgNSP >= 70 ? "Cukup" : "Perlu Perhatian"}
-            </div>
-          </div>
-          <div style={S.statCard}>
-            <div style={S.statLabel}>NILAI DASAR / BULAN</div>
-            <div style={S.statValue}>{NILAI_DASAR}<span style={S.statUnit}>poin</span></div>
-            <div style={{ fontSize: 11, color: COLORS.muted, marginTop: 4 }}>+ 1 jika tanpa teguran</div>
-          </div>
-          <div style={S.statCard}>
-            <div style={S.statLabel}>TOTAL POIN LHP (SEMUA BULAN)</div>
-            <div style={S.statValue}>{monthlyFull.reduce((s, md) => s + md.poinLHP, 0).toFixed(2)}<span style={S.statUnit}>poin</span></div>
-          </div>
-        </div>
-
-        {/* Formula card */}
-        <div style={{ ...S.formSection, marginBottom: 16 }}>
-          <div style={S.formTitle}>Rumus NSP per Bulan</div>
-          <div style={{ fontSize: 12, color: COLORS.text, lineHeight: 1.8, fontFamily: "'IBM Plex Mono', monospace" }}>
-            NSP = <span style={{ color: COLORS.accent }}>70</span> (dasar)
-            + <span style={{ color: COLORS.success }}>1</span> (tanpa teguran)
-            + <span style={{ color: "#a78bfa" }}>Nilai Pengasuh</span> (maks 10)
-            + <span style={{ color: COLORS.accent }}>Poin LHP</span>
-            − <span style={{ color: COLORS.danger }}>Teguran</span>
-          </div>
-        </div>
-
-        {/* Monthly bar chart */}
-        <div style={S.formSection}>
-          <div style={S.formTitle}>NSP per Bulan <span style={{ fontSize: 11, color: COLORS.muted, fontWeight: 400 }}>— klik bulan untuk detail & input teguran</span></div>
-          <div style={{ display: "flex", gap: 4, alignItems: "flex-end", height: 180, paddingBottom: 28, position: "relative" }}>
-            {/* Reference line at 70 */}
-            <div style={{
-              position: "absolute", left: 0, right: 0,
-              bottom: 28 + ((NILAI_DASAR / maxTotal) * 150),
-              height: 1, borderTop: "1px dashed rgba(251,191,36,0.4)",
-            }} />
-            {monthlyFull.map((md, i) => {
-              const barH = md.totalBulan > 0 ? Math.max(4, (md.totalBulan / maxTotal) * 150) : 2;
-              const isNow = i === todayDate.getMonth();
-              const hasTeg = md.teguranList.length > 0;
-              return (
-                <div key={md.month.key} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 2, cursor: "pointer" }} onClick={() => setSelMonth(i)}>
-                  <div style={{ fontSize: 9, fontWeight: 700, fontFamily: "'IBM Plex Mono', monospace", color: hasTeg ? COLORS.danger : isNow ? COLORS.accent : COLORS.text }}>
-                    {md.totalBulan.toFixed(1)}
-                  </div>
-                  <div style={{
-                    width: "65%", height: barH,
-                    background: hasTeg
-                      ? `linear-gradient(180deg, ${COLORS.danger}, rgba(248,113,113,0.3))`
-                      : isNow
-                      ? `linear-gradient(180deg, ${COLORS.accent}, rgba(79,142,247,0.3))`
-                      : `linear-gradient(180deg, rgba(79,142,247,0.6), rgba(79,142,247,0.15))`,
-                    borderRadius: "4px 4px 0 0",
-                    border: isNow ? `1px solid ${COLORS.accent}` : hasTeg ? `1px solid ${COLORS.danger}` : "none",
-                    transition: "height 0.3s",
-                  }} />
-                  <div style={{ fontSize: 9, color: isNow ? COLORS.accent : COLORS.muted, fontWeight: isNow ? 700 : 400 }}>
-                    {md.month.name.slice(0, 3)}
-                  </div>
-                  {hasTeg && <div style={{ fontSize: 8, color: COLORS.danger }}>⚠{md.teguranList.length}</div>}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Monthly table */}
-        <div style={S.formSection}>
-          <div style={S.formTitle}>Detail NSP Bulanan</div>
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11 }}>
-              <thead>
-                <tr>
-                  {["BULAN", "DASAR", "TEGURAN?", "PENGASUH", "LHP", "TEGURAN", "TOTAL"].map((h, i) => (
-                    <th key={h} style={{ textAlign: i === 0 ? "left" : "center", padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.muted, fontWeight: 600, fontSize: 10, whiteSpace: "nowrap" }}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {monthlyFull.map((md, i) => {
-                  const isNow = i === todayDate.getMonth();
-                  const f = "'IBM Plex Mono', monospace";
-                  return (
-                    <tr key={md.month.key} style={{ background: isNow ? COLORS.accentDim : "transparent", cursor: "pointer" }} onClick={() => setSelMonth(i)}>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, fontWeight: isNow ? 700 : 400, color: isNow ? COLORS.accent : COLORS.text }}>{md.month.name.slice(0, 3)}</td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, color: COLORS.muted }}>{NILAI_DASAR}</td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, color: md.bonusTanpaTeguran > 0 ? COLORS.success : COLORS.danger }}>
-                        {md.bonusTanpaTeguran > 0 ? "+1 ✓" : "0 ✗"}
-                      </td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, color: "#a78bfa" }}>+{md.nilaiPengasuh}</td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, color: COLORS.accent }}>
-                        {md.poinLHP > 0 ? `+${md.poinLHP.toFixed(2)}` : "—"}
-                      </td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, color: md.totalPengurangan > 0 ? COLORS.danger : COLORS.muted }}>
-                        {md.totalPengurangan > 0 ? `−${md.totalPengurangan.toFixed(1)}` : "—"}
-                      </td>
-                      <td style={{ padding: "6px 6px", borderBottom: `1px solid ${COLORS.border}`, textAlign: "center", fontFamily: f, fontWeight: 700, color: md.totalBulan >= 75 ? COLORS.success : md.totalBulan >= 70 ? COLORS.warning : COLORS.danger }}>
-                        {md.totalBulan.toFixed(2)}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ── DETAIL BULAN MODE ──
-  const md = monthlyFull[selMonth];
-  const mk = md.month.key;
-
-  return (
-    <div>
-      {/* Back */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-        <button onClick={() => { setSelMonth(null); setShowAddTeguran(false); }} style={{
-          background: "none", border: `1px solid ${COLORS.border}`, borderRadius: 6,
-          padding: "4px 10px", cursor: "pointer", color: COLORS.muted, fontFamily: "inherit", fontSize: 12, fontWeight: 600,
-        }}>← Kembali</button>
-        <div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: COLORS.text }}>{md.month.name} {md.month.year}</div>
-          <div style={{ fontSize: 11, color: COLORS.muted }}>Detail NSP Bulan Ini</div>
-        </div>
-      </div>
-
-      {/* Score breakdown */}
-      <div style={S.formSection}>
-        <div style={S.formTitle}>Perhitungan NSP</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            { label: "Nilai Dasar", value: `+${NILAI_DASAR}`, color: COLORS.text },
-            { label: `Bonus Tanpa Teguran (${md.teguranList.length === 0 ? "tidak ada teguran" : "ada teguran"})`, value: md.bonusTanpaTeguran > 0 ? "+1" : "0", color: md.bonusTanpaTeguran > 0 ? COLORS.success : COLORS.danger },
-            { label: "Nilai Sikap Pengasuh", value: `+${md.nilaiPengasuh}`, color: "#a78bfa" },
-            { label: "Poin LHP", value: `+${md.poinLHP.toFixed(2)}`, color: COLORS.accent },
-            ...(md.totalPengurangan > 0 ? [{ label: "Pengurangan Teguran", value: `−${md.totalPengurangan.toFixed(1)}`, color: COLORS.danger }] : []),
-          ].map((row) => (
-            <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0", borderBottom: `1px solid ${COLORS.border}` }}>
-              <span style={{ fontSize: 12, color: COLORS.muted }}>{row.label}</span>
-              <span style={{ fontSize: 14, fontWeight: 700, fontFamily: "'IBM Plex Mono', monospace", color: row.color }}>{row.value}</span>
-            </div>
-          ))}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0" }}>
-            <span style={{ fontSize: 14, fontWeight: 700, color: COLORS.text }}>TOTAL NSP</span>
-            <span style={{ fontSize: 22, fontWeight: 700, fontFamily: "'IBM Plex Mono', monospace", color: md.totalBulan >= 75 ? COLORS.success : md.totalBulan >= 70 ? COLORS.warning : COLORS.danger }}>
-              {md.totalBulan.toFixed(2)}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Nilai Sikap Pengasuh input */}
-      <div style={S.formSection}>
-        <div style={S.formTitle}>Nilai Sikap Tambahan Pengasuh</div>
-        <div style={{ fontSize: 11, color: COLORS.muted, marginBottom: 8 }}>
-          Nilai dari pengasuh (0–10). Default: 10 jika tidak diubah.
-        </div>
-        <input
-          style={{ ...S.input, maxWidth: 200 }}
-          type="number"
-          min="0" max="10" step="0.5"
-          value={md.nilaiPengasuh}
-          onChange={(e) => handleNilaiPengasuh(mk, e.target.value)}
-          placeholder="10"
-        />
-      </div>
-
-      {/* Teguran section */}
-      <div style={S.formSection}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-          <div style={S.formTitle}>Teguran / Pelanggaran <span style={{ fontSize: 11, color: COLORS.danger, fontWeight: 400 }}>(mengurangi NSP)</span></div>
-          <button onClick={() => setShowAddTeguran(!showAddTeguran)} style={{
-            background: showAddTeguran ? COLORS.dangerDim : "transparent",
-            border: `1px solid ${showAddTeguran ? COLORS.danger : COLORS.border}`,
-            borderRadius: 6, padding: "4px 12px", fontSize: 11, fontWeight: 700,
-            cursor: "pointer", color: showAddTeguran ? COLORS.danger : COLORS.muted, fontFamily: "inherit",
-          }}>
-            {showAddTeguran ? "✕ Batal" : "+ Tambah Teguran"}
-          </button>
-        </div>
-
-        {/* Add teguran form */}
-        {showAddTeguran && (
-          <div style={{ background: COLORS.bg, border: `1px solid ${COLORS.border}`, borderRadius: 8, padding: 12, marginBottom: 12 }}>
-            <div style={{ marginBottom: 8 }}>
-              <label style={S.formLabel}>JENIS TEGURAN</label>
-              <select style={S.select} value={newTeguranType} onChange={(e) => setNewTeguranType(e.target.value)}>
-                {TEGURAN_TYPES.map((t) => (
-                  <option key={t.id} value={t.id}>{t.nama} {t.id !== "custom" ? `(−${t.pengurangan} poin)` : ""}</option>
-                ))}
-              </select>
-            </div>
-            {newTeguranType === "custom" && (
-              <div style={{ marginBottom: 8 }}>
-                <label style={S.formLabel}>NILAI PENGURANGAN</label>
-                <input style={{ ...S.input, maxWidth: 200 }} type="number" min="0" step="0.5" value={newTeguranNilai} onChange={(e) => setNewTeguranNilai(e.target.value)} placeholder="0.5" />
-              </div>
-            )}
-            <div style={{ marginBottom: 8 }}>
-              <label style={S.formLabel}>TANGGAL (opsional)</label>
-              <input style={{ ...S.input, maxWidth: 200 }} type="date" value={newTeguranTgl} onChange={(e) => setNewTeguranTgl(e.target.value)} />
-            </div>
-            <div style={{ marginBottom: 8 }}>
-              <label style={S.formLabel}>KETERANGAN (opsional)</label>
-              <input style={S.input} type="text" placeholder="contoh: Terlambat apel pagi" value={newTeguranKet} onChange={(e) => setNewTeguranKet(e.target.value)} />
-            </div>
-            <button onClick={() => handleAddTeguran(mk)} style={{ ...S.btnPrimary, background: COLORS.danger, maxWidth: 200 }}>
-              Simpan Teguran
-            </button>
-          </div>
-        )}
-
-        {/* List teguran */}
-        {md.teguranList.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "16px 0", color: COLORS.success, fontSize: 13, fontWeight: 600 }}>
-            ✅ Tidak ada teguran bulan ini — +1 poin bonus!
-          </div>
-        ) : (
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {md.teguranList.map((t) => (
-              <div key={t.id} style={{
-                background: COLORS.dangerDim, border: `1px solid rgba(248,113,113,0.2)`,
-                borderRadius: 8, padding: "8px 12px",
-                display: "flex", justifyContent: "space-between", alignItems: "center",
-              }}>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: COLORS.danger }}>{t.type}</div>
-                  <div style={{ fontSize: 11, color: COLORS.muted }}>
-                    {t.tanggal && `${t.tanggal} · `}{t.keterangan || "Tanpa keterangan"}
-                  </div>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ fontSize: 14, fontWeight: 700, fontFamily: "'IBM Plex Mono', monospace", color: COLORS.danger }}>
-                    −{t.pengurangan.toFixed(1)}
-                  </span>
-                  <button onClick={() => handleRemoveTeguran(mk, t.id)} style={{
-                    background: "none", border: "none", color: COLORS.muted, cursor: "pointer",
-                    fontSize: 16, lineHeight: 1, fontFamily: "inherit",
-                  }} title="Hapus teguran">✕</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ─── ASISTEN LHP PAGE ─────────────────────────────────────────────────────────
-
-const ASISTEN_MODES = [
-  {
-    id: "nasionalisme",
-    icon: "🇮🇩",
-    title: "Artikel Nasionalisme",
-    subtitle: "B2 – Cinta Tanah Air · 0.75 poin",
-    description: "Generate artikel narasi bertema nasionalisme (untuk poin NSP B2b1). Turnitin maks 20%.",
-    fields: [
-      { id: "topik", label: "Topik / Tema Artikel", placeholder: "contoh: Peran generasi muda dalam menjaga persatuan bangsa di era digital", type: "text" },
-      { id: "sudut", label: "Sudut Pandang (opsional)", placeholder: "contoh: Dari perspektif Taruna Akpol sebagai calon perwira Polri", type: "text" },
-      { id: "panjang", label: "Panjang Artikel", placeholder: "", type: "select", options: ["800-1000 kata", "1000-1500 kata", "1500-2000 kata"] },
-    ],
-    buildPrompt: (vals) =>
-      `Kamu adalah seorang Taruna Akademi Kepolisian (Akpol) Tingkat II. Tulis sebuah artikel narasi bertema nasionalisme dengan topik: "${vals.topik}".
-${vals.sudut ? `Sudut pandang: ${vals.sudut}.` : "Tulis dari sudut pandang Taruna Akpol sebagai calon perwira Polri."}
-Panjang artikel: ${vals.panjang || "1000-1500 kata"}.
-
-Ketentuan:
-- Artikel harus ORISINIL, bukan copy-paste, agar lolos cek turnitin (maks 20% similarity).
-- Gunakan bahasa Indonesia formal yang baik dan benar.
-- Struktur: Judul, Pendahuluan, Isi (2-3 sub-bagian), Penutup/Kesimpulan.
-- Sertakan referensi atau contoh nyata yang relevan.
-- Kaitkan dengan nilai-nilai kepolisian: Tribrata, Catur Prasetya, atau Pancasila.
-- Tulis langsung artikelnya tanpa komentar tambahan.`,
-  },
-  {
-    id: "bahaya_negara",
-    icon: "⚠️",
-    title: "Laporan Bahaya/Kerugian Negara",
-    subtitle: "B2 – Cinta Tanah Air · 0.30 poin",
-    description: "Generate uraian LHP tentang hal yang membahayakan/merugikan negara (untuk poin NSP B2a5).",
-    fields: [
-      { id: "kejadian", label: "Deskripsi Kejadian / Hal yang Ditemukan", placeholder: "contoh: Menemukan konten hoaks tentang pemilu di media sosial yang berpotensi memecah belah", type: "textarea" },
-      { id: "lokasi", label: "Lokasi / Platform", placeholder: "contoh: Media sosial Instagram / Wilayah sekitar Akpol", type: "text" },
-      { id: "waktu", label: "Waktu Kejadian", placeholder: "contoh: Sabtu, 10 Mei 2026 pukul 14.00 WIB", type: "text" },
-      { id: "tindakan", label: "Tindakan yang Dilakukan (opsional)", placeholder: "contoh: Melaporkan ke platform dan mengedukasi rekan taruna", type: "text" },
-    ],
-    buildPrompt: (vals) =>
-      `Kamu adalah seorang Taruna Akademi Kepolisian (Akpol) Tingkat II bernama MUHAMMAD RADHITYA BHARA KUNTARA, NO.AK 200507014166.
-
-Buatkan uraian Laporan Hasil Pelaksanaan (LHP) tentang penemuan hal yang membahayakan atau merugikan negara.
-
-Detail kejadian:
-- Kejadian: ${vals.kejadian}
-- Lokasi/Platform: ${vals.lokasi || "(tidak disebutkan)"}
-- Waktu: ${vals.waktu || "(tidak disebutkan)"}
-${vals.tindakan ? `- Tindakan yang dilakukan: ${vals.tindakan}` : ""}
-
-Ketentuan penulisan:
-- Tulis dalam format uraian LHP formal, menggunakan bahasa Indonesia baku.
-- Jelaskan kronologi secara rinci: apa yang ditemukan, kapan, di mana, bagaimana, dampak potensial.
-- Jelaskan mengapa hal ini membahayakan/merugikan negara (kaitkan dengan ketahanan nasional, NKRI, Pancasila).
-- Jelaskan tindakan atau langkah yang dilakukan/direkomendasikan.
-- Panjang: 300-500 kata.
-- Tulis langsung uraiannya tanpa komentar tambahan, tanpa judul "URAIAN KEGIATAN" di atas.`,
-  },
-  {
-    id: "kunjungan_satuan",
-    icon: "🏛️",
-    title: "Laporan Kunjungan Kesatuan Polri",
-    subtitle: "B6 – Profesional · 0.33 poin",
-    description: "Generate laporan teknis kunjungan ke kesatuan Polri saat cuti/pesiar (untuk poin NSP B6a2).",
-    fields: [
-      { id: "satuan", label: "Nama Kesatuan yang Dikunjungi", placeholder: "contoh: Polres Surabaya / Polda Jawa Timur / Polsek Gayungan", type: "text" },
-      { id: "tanggal_kunjungan", label: "Tanggal Kunjungan", placeholder: "contoh: 5 Mei 2026", type: "text" },
-      { id: "pejabat", label: "Pejabat yang Ditemui", placeholder: "contoh: Kapolres AKBP Budi Santoso, S.I.K., M.H.", type: "text" },
-      { id: "kegiatan", label: "Kegiatan / Hal yang Diamati", placeholder: "contoh: Mengamati proses penyidikan tindak pidana pencurian, melihat fasilitas SPKT, berdiskusi tentang pemolisian masyarakat", type: "textarea" },
-      { id: "materi_kuliah", label: "Keterkaitan dengan Materi Kuliah", placeholder: "contoh: Hukum Acara Pidana, Manajemen Operasional Kepolisian", type: "text" },
-    ],
-    buildPrompt: (vals) =>
-      `Kamu adalah seorang Taruna Akademi Kepolisian (Akpol) Tingkat II bernama MUHAMMAD RADHITYA BHARA KUNTARA, NO.AK 200507014166.
-
-Buatkan laporan teknis kunjungan ke kesatuan Polri untuk Laporan Hasil Pelaksanaan (LHP).
-
-Detail kunjungan:
-- Kesatuan: ${vals.satuan}
-- Tanggal: ${vals.tanggal_kunjungan || "(tidak disebutkan)"}
-- Pejabat yang ditemui: ${vals.pejabat || "(tidak disebutkan)"}
-- Kegiatan/hal yang diamati: ${vals.kegiatan}
-- Keterkaitan materi kuliah: ${vals.materi_kuliah || "(tidak disebutkan)"}
-
-Ketentuan penulisan:
-- Format: laporan teknis kunjungan, bahasa Indonesia formal baku.
-- Struktur: Pendahuluan (tujuan kunjungan), Pelaksanaan (kronologi, apa yang dilihat/dipelajari, diskusi dengan pejabat), Analisis (keterkaitan dengan materi kuliah yang dipelajari di Akpol), Kesimpulan dan Saran.
-- Sertakan produk tertulis tentang situasi lapangan di kesatuan tersebut sesuai materi kuliah.
-- Panjang: 500-800 kata.
-- Tulis langsung laporannya tanpa komentar tambahan.`,
-  },
-];
-
-function AssistantPage() {
-  const [activeMode, setActiveMode] = useState(null);
-  const [fieldValues, setFieldValues] = useState({});
-  const [result, setResult] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
-
-  const handleFieldChange = (fieldId, val) => {
-    setFieldValues((prev) => ({ ...prev, [fieldId]: val }));
-  };
-
-  const handleGenerate = async () => {
-    const mode = ASISTEN_MODES.find((m) => m.id === activeMode);
-    if (!mode) return;
-
-    // Validate required fields
-    const firstField = mode.fields[0];
-    if (!fieldValues[firstField.id]?.trim()) {
-      setError(`Isi "${firstField.label}" terlebih dahulu.`);
-      return;
-    }
-
-    setError("");
-    setLoading(true);
-    setResult("");
-    try {
-      const prompt = mode.buildPrompt(fieldValues);
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 4000,
-          messages: [{ role: "user", content: prompt }],
-        }),
-      });
-      const data = await response.json();
-      const text = data.content
-        ?.map((item) => (item.type === "text" ? item.text : ""))
-        .filter(Boolean)
-        .join("\n") || "";
-      if (!text) throw new Error("Respons kosong dari AI");
-      setResult(text);
-    } catch (e) {
-      setError("Gagal generate. Pastikan koneksi internet aktif. Error: " + e.message);
-      console.error(e);
-    }
-    setLoading(false);
-  };
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(result).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    });
-  };
-
-  const handleReset = () => {
-    setActiveMode(null);
-    setFieldValues({});
-    setResult("");
-    setError("");
-  };
-
-  // Mode selection screen
-  if (!activeMode) {
-    return (
-      <div>
-        <div style={{ fontSize: 13, color: COLORS.muted, marginBottom: 16 }}>
-          Pilih jenis dokumen yang ingin dibuat — AI akan bantu draft-kan berdasarkan input kamu.
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {ASISTEN_MODES.map((mode) => (
-            <div
-              key={mode.id}
-              onClick={() => { setActiveMode(mode.id); setFieldValues({}); setResult(""); setError(""); }}
-              style={{
-                background: COLORS.surface,
-                border: `1px solid ${COLORS.border}`,
-                borderRadius: 10,
-                padding: "14px 16px",
-                cursor: "pointer",
-                transition: "border-color 0.15s",
-                display: "flex",
-                gap: 14,
-                alignItems: "flex-start",
-              }}
-            >
-              <div style={{ fontSize: 28, lineHeight: 1, flexShrink: 0, marginTop: 2 }}>{mode.icon}</div>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.text, marginBottom: 2 }}>{mode.title}</div>
-                <div style={{ fontSize: 11, color: COLORS.accent, fontWeight: 600, marginBottom: 4 }}>{mode.subtitle}</div>
-                <div style={{ fontSize: 12, color: COLORS.muted, lineHeight: 1.4 }}>{mode.description}</div>
-              </div>
-              <div style={{ fontSize: 18, color: COLORS.muted, marginTop: 6 }}>→</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  // Active mode form
-  const mode = ASISTEN_MODES.find((m) => m.id === activeMode);
-
-  return (
-    <div>
-      {/* Back button + title */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-        <button onClick={handleReset} style={{
-          background: "none", border: `1px solid ${COLORS.border}`, borderRadius: 6,
-          padding: "4px 10px", cursor: "pointer", color: COLORS.muted, fontFamily: "inherit",
-          fontSize: 12, fontWeight: 600,
-        }}>← Kembali</button>
-        <div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: COLORS.text }}>{mode.icon} {mode.title}</div>
-          <div style={{ fontSize: 11, color: COLORS.accent, fontWeight: 600 }}>{mode.subtitle}</div>
-        </div>
-      </div>
-
-      {/* Form fields */}
-      <div style={S.formSection}>
-        {mode.fields.map((field) => (
-          <div key={field.id} style={{ marginBottom: 12 }}>
-            <label style={S.formLabel}>{field.label}</label>
-            {field.type === "textarea" ? (
-              <textarea
-                style={S.textarea}
-                placeholder={field.placeholder}
-                value={fieldValues[field.id] || ""}
-                onChange={(e) => handleFieldChange(field.id, e.target.value)}
-              />
-            ) : field.type === "select" ? (
-              <select
-                style={S.select}
-                value={fieldValues[field.id] || field.options[1] || field.options[0]}
-                onChange={(e) => handleFieldChange(field.id, e.target.value)}
-              >
-                {field.options.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
-            ) : (
-              <input
-                style={S.input}
-                type="text"
-                placeholder={field.placeholder}
-                value={fieldValues[field.id] || ""}
-                onChange={(e) => handleFieldChange(field.id, e.target.value)}
-              />
-            )}
-          </div>
-        ))}
-
-        {error && (
-          <div style={{ ...S.banner("danger"), marginBottom: 10 }}>{error}</div>
-        )}
-
-        <button
-          style={{ ...S.btnPrimary, opacity: loading ? 0.6 : 1 }}
-          onClick={handleGenerate}
-          disabled={loading}
-        >
-          {loading ? "⏳ AI sedang menulis..." : `✨ Generate ${mode.title}`}
-        </button>
-      </div>
-
-      {/* Loading animation */}
-      {loading && (
-        <div style={{
-          background: COLORS.surface, border: `1px solid ${COLORS.border}`,
-          borderRadius: 10, padding: "20px", marginTop: 12, textAlign: "center",
-        }}>
-          <div style={{ fontSize: 13, color: COLORS.muted, marginBottom: 8 }}>
-            AI sedang menulis {mode.title.toLowerCase()}...
-          </div>
-          <div style={{
-            width: 120, height: 3, background: COLORS.border,
-            borderRadius: 2, margin: "0 auto", overflow: "hidden",
-          }}>
-            <div style={{
-              width: "40%", height: 3, background: COLORS.accent,
-              borderRadius: 2, animation: "loading 1.5s ease-in-out infinite",
-            }} />
-          </div>
-          <style>{`@keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }`}</style>
-        </div>
-      )}
-
-      {/* Result */}
-      {result && (
-        <div style={{ marginTop: 14 }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-            <div style={{ fontSize: 11, color: COLORS.muted, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              Hasil — {mode.title}
-            </div>
-            <div style={{ display: "flex", gap: 6 }}>
-              <button onClick={handleCopy} style={{
-                background: COLORS.surface, border: `1px solid ${COLORS.border}`,
-                borderRadius: 6, padding: "4px 12px", fontSize: 11, fontWeight: 600,
-                cursor: "pointer", color: copied ? COLORS.success : COLORS.muted,
-                fontFamily: "inherit",
-              }}>
-                {copied ? "✓ Tersalin!" : "⎘ Salin"}
-              </button>
-              <button onClick={handleGenerate} style={{
-                background: COLORS.surface, border: `1px solid ${COLORS.border}`,
-                borderRadius: 6, padding: "4px 12px", fontSize: 11, fontWeight: 600,
-                cursor: "pointer", color: COLORS.accent, fontFamily: "inherit",
-              }}>
-                ↻ Regenerate
-              </button>
-            </div>
-          </div>
-          <div style={{
-            background: "#fff", color: "#000", borderRadius: 8,
-            padding: "20px 24px", fontSize: 13, lineHeight: 1.8,
-            fontFamily: "Arial MT, Arial, sans-serif",
-            whiteSpace: "pre-wrap", maxHeight: 600, overflowY: "auto",
-            border: "1px solid #ddd",
-          }}>
-            {result}
-          </div>
-
-          {/* Tip */}
-          <div style={{ ...S.banner("success"), marginTop: 10 }}>
-            💡 Salin teks di atas → buka tab <strong>Form LHP</strong> → pilih kegiatan yang sesuai → paste ke field <strong>Uraian Kegiatan</strong> → generate DOCX.
-            {mode.id === "nasionalisme" && " Jangan lupa cek Turnitin sebelum dikumpulkan (maks 20%)."}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── LAMPIRAN BULANAN PAGE ────────────────────────────────────────────────────
-// Gabungkan file-file .docx yang sudah jadi menjadi 1 file .docx
-
-async function mergeDocxFiles(files, monthName, monthYear) {
-  // Load JSZip
-  if (!window.JSZip) {
-    await new Promise((resolve, reject) => {
-      const s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
-      s.onload = resolve;
-      s.onerror = reject;
-      document.head.appendChild(s);
-    });
-  }
-
-  const JSZip = window.JSZip;
-
-  // ── Helpers ──
-  const B = (text, size = 22, color = "000000") => new TextRun({ text, bold: true, size, font: "Arial", color });
-  const R = (text, size = 22, color = "000000") => new TextRun({ text, size, font: "Arial MT", color });
-  const p = (children, opts = {}) => new Paragraph({ children, spacing: { after: 0, before: 0 }, ...opts });
-  const blank = () => p([R("")]);
-  const pageProps = { size: { width: 11906, height: 16838 }, margin: { top: 1134, right: 1134, bottom: 1134, left: 1134 } };
-
-  let logoData = null;
-  try { logoData = await fetchLogoBase64(); } catch (_) {}
-
-  // ── 1. Build cover page docx ──
-  const coverChildren = [blank(), blank(), blank(), blank()];
-  if (logoData) {
-    coverChildren.push(p([new ImageRun({ type: "jpg", data: logoData, transformation: { width: 120, height: 136 }, altText: { title: "Logo", description: "Logo", name: "logo" } })], { alignment: AlignmentType.CENTER }));
-    coverChildren.push(blank());
-  }
-  coverChildren.push(
-    p([B("LAMPIRAN", 32)], { alignment: AlignmentType.CENTER }),
-    p([B("LAPORAN HASIL PELAKSANAAN KEGIATAN", 28)], { alignment: AlignmentType.CENTER }),
-    p([B("TARUNA TK. II/59/BD", 28)], { alignment: AlignmentType.CENTER }),
-    blank(),
-    p([B(`BULAN ${monthName.toUpperCase()} ${monthYear}`, 26)], { alignment: AlignmentType.CENTER }),
-    blank(), blank(), blank(),
-    p([B(TARUNA.nama, 24)], { alignment: AlignmentType.CENTER }),
-    p([R(`NO. AK ${TARUNA.noakad}`, 22)], { alignment: AlignmentType.CENTER }),
-    p([R(`TON/KI ${TARUNA.tonki}`, 22)], { alignment: AlignmentType.CENTER }),
-    blank(), blank(), blank(),
-    p([R("DETASEMEN TARUNA TK II/59/BD", 22)], { alignment: AlignmentType.CENTER }),
-    p([R("RESIMEN KORPS TARUNA DAN SISWA", 22)], { alignment: AlignmentType.CENTER }),
-    p([R("AKADEMI KEPOLISIAN", 22)], { alignment: AlignmentType.CENTER }),
-    p([R(`${monthYear}`, 22)], { alignment: AlignmentType.CENTER }),
-  );
-  // Page 2: daftar isi
-  const daftarChildren = [
-    p([B("DAFTAR ISI", 24)], { alignment: AlignmentType.CENTER }),
-    blank(),
-  ];
-  files.forEach((f, i) => {
-    const cleanName = f.name.replace(/\.docx$/i, "");
-    daftarChildren.push(p([R(`${i + 1}.  ${cleanName}`, 22)]));
-  });
-  daftarChildren.push(blank());
-  daftarChildren.push(p([R(`Total: ${files.length} LHP`, 20)], { alignment: AlignmentType.CENTER }));
-
-  const coverDoc = new Document({
-    sections: [
-      { properties: { page: pageProps }, children: coverChildren },
-      { properties: { page: pageProps }, children: daftarChildren },
-    ],
-  });
-  const coverBlob = await Packer.toBlob(coverDoc);
-
-  // ── 2. Use first docx (cover) as base, then append each uploaded file ──
-  const masterZip = await JSZip.loadAsync(coverBlob);
-
-  // Parse master document.xml
-  let masterDocXml = await masterZip.file("word/document.xml").async("string");
-
-  // Parse master [Content_Types].xml
-  let contentTypes = await masterZip.file("[Content_Types].xml").async("string");
-
-  // Parse master word/_rels/document.xml.rels
-  let masterRels = await masterZip.file("word/_rels/document.xml.rels")?.async("string") || "";
-
-  // Track relationship IDs to avoid collision
-  let relIdCounter = 100;
-  let mediaCounter = 100;
-
-  // For each uploaded file, extract body XML, remap images
-  for (let fi = 0; fi < files.length; fi++) {
-    const file = files[fi];
-    const buf = await readFileAsArrayBuffer(file);
-    let srcZip;
-    try {
-      srcZip = await JSZip.loadAsync(buf);
-    } catch (e) {
-      console.warn("Cannot read:", file.name, e);
-      continue;
-    }
-
-    const srcDocXml = await srcZip.file("word/document.xml")?.async("string");
-    if (!srcDocXml) continue;
-
-    // Extract body content
-    const bodyMatch = srcDocXml.match(/<w:body>([\s\S]*)<\/w:body>/);
-    if (!bodyMatch) continue;
-    let bodyContent = bodyMatch[1];
-
-    // Remove trailing <w:sectPr.../> from body content (section properties)
-    bodyContent = bodyContent.replace(/<w:sectPr[\s\S]*?<\/w:sectPr>/g, "");
-    bodyContent = bodyContent.replace(/<w:sectPr[^/]*\/>/g, "");
-
-    // Parse source relationships to find images
-    const srcRels = await srcZip.file("word/_rels/document.xml.rels")?.async("string") || "";
-
-    // Find all image relationships in source
-    const relRegex = /<Relationship[^>]*Id="([^"]*)"[^>]*Target="([^"]*)"[^>]*Type="[^"]*\/image"[^>]*\/?>/g;
-    const relRegex2 = /<Relationship[^>]*Type="[^"]*\/image"[^>]*Target="([^"]*)"[^>]*Id="([^"]*)"[^>]*\/?>/g;
-
-    // More flexible regex to capture all attributes regardless of order
-    const allRels = [];
-    const relLines = srcRels.match(/<Relationship[^>]*\/?\s*>/g) || [];
-    for (const line of relLines) {
-      const idM = line.match(/Id="([^"]*)"/);
-      const targetM = line.match(/Target="([^"]*)"/);
-      const typeM = line.match(/Type="([^"]*)"/);
-      if (idM && targetM && typeM && typeM[1].includes("/image")) {
-        allRels.push({ id: idM[1], target: targetM[1] });
-      }
-    }
-
-    // Copy each image to master zip with new name, update references
-    for (const rel of allRels) {
-      const newRelId = `rMerged${relIdCounter++}`;
-      const srcMediaPath = rel.target.startsWith("/") ? rel.target.substring(1) : "word/" + rel.target;
-      const ext = rel.target.split(".").pop() || "png";
-      const newMediaName = `media/merged_${mediaCounter++}.${ext}`;
-      const newMediaPath = `word/${newMediaName}`;
-
-      // Copy media file
-      const mediaFile = srcZip.file(srcMediaPath) || srcZip.file(rel.target);
-      if (mediaFile) {
-        const mediaData = await mediaFile.async("uint8array");
-        masterZip.file(newMediaPath, mediaData);
-
-        // Add to content types if needed
-        const extLower = ext.toLowerCase();
-        if (!contentTypes.includes(`Extension="${extLower}"`)) {
-          const mimeMap = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", bmp: "image/bmp", tiff: "image/tiff", emf: "image/x-emf", wmf: "image/x-wmf" };
-          const mime = mimeMap[extLower] || `image/${extLower}`;
-          contentTypes = contentTypes.replace("</Types>", `<Default Extension="${extLower}" ContentType="${mime}"/></Types>`);
-        }
-      }
-
-      // Replace relationship ID in body content
-      const oldIdEscaped = rel.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      bodyContent = bodyContent.replace(new RegExp(`r:embed="${oldIdEscaped}"`, "g"), `r:embed="${newRelId}"`);
-      bodyContent = bodyContent.replace(new RegExp(`r:link="${oldIdEscaped}"`, "g"), `r:link="${newRelId}"`);
-
-      // Add new relationship to master rels
-      masterRels = masterRels.replace("</Relationships>",
-        `<Relationship Id="${newRelId}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="${newMediaName}"/></Relationships>`
-      );
-    }
-
-    // Insert page break + body content before </w:body> in master
-    const pageBreakXml = '<w:p><w:pPr><w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134"/></w:sectPr></w:pPr></w:p>';
-
-    masterDocXml = masterDocXml.replace("</w:body>", pageBreakXml + bodyContent + "</w:body>");
-  }
-
-  // ── 3. Write back and download ──
-  masterZip.file("word/document.xml", masterDocXml);
-  masterZip.file("[Content_Types].xml", contentTypes);
-  if (masterRels) {
-    masterZip.file("word/_rels/document.xml.rels", masterRels);
-  }
-
-  const finalBlob = await masterZip.generateAsync({
-    type: "blob",
-    mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    compression: "DEFLATE",
-    compressionOptions: { level: 6 },
-  });
-
-  const url = URL.createObjectURL(finalBlob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `LAMPIRAN_LHP_RADIT_${monthName.toUpperCase()}_${monthYear}.docx`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function LampiranPage() {
-  const [selMonthIdx, setSelMonthIdx] = useState(todayDate.getMonth());
-  const [files, setFiles] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
-  const [error, setError] = useState("");
-
-  const m = MONTHS[selMonthIdx];
-
-  const handleFileAdd = (e) => {
-    const newFiles = Array.from(e.target.files).filter(f =>
-      f.name.endsWith(".docx")
-    );
-    if (newFiles.length === 0) {
-      setError("Hanya file .docx yang diterima.");
-      return;
-    }
-    setError("");
-    setFiles((prev) => [...prev, ...newFiles.map((f) => ({ file: f, name: f.name, size: f.size }))]);
-    e.target.value = "";
-  };
-
-  const handleRemoveFile = (idx) => {
-    setFiles((prev) => prev.filter((_, i) => i !== idx));
-  };
-
-  const handleMoveUp = (idx) => {
-    if (idx === 0) return;
-    setFiles((prev) => { const n = [...prev]; [n[idx-1], n[idx]] = [n[idx], n[idx-1]]; return n; });
-  };
-
-  const handleMoveDown = (idx) => {
-    if (idx >= files.length - 1) return;
-    setFiles((prev) => { const n = [...prev]; [n[idx], n[idx+1]] = [n[idx+1], n[idx]]; return n; });
-  };
-
-  const handleExport = async () => {
-    if (files.length === 0) return;
-    setLoading(true); setDone(false); setError("");
-    try {
-      await mergeDocxFiles(files.map(f => f.file), m.name, m.year);
-      setDone(true);
-      setTimeout(() => setDone(false), 5000);
-    } catch (e) {
-      setError("Gagal menggabungkan file: " + e.message);
-      console.error(e);
-    }
-    setLoading(false);
-  };
-
-  const fmtSize = (b) => b < 1024 ? b + " B" : b < 1048576 ? (b/1024).toFixed(1) + " KB" : (b/1048576).toFixed(1) + " MB";
-
-  return (
-    <div>
-      <div style={{ fontSize: 13, color: COLORS.muted, marginBottom: 14 }}>
-        Upload file LHP (.docx) yang sudah jadi → atur urutan → gabung menjadi 1 file DOCX lengkap dengan cover untuk Dantontar.
-      </div>
-
-      {/* Month selector */}
-      <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 16 }}>
-        {MONTHS.map((mo, i) => (
-          <button key={mo.key} onClick={() => setSelMonthIdx(i)} style={{
-            padding: "6px 12px", fontSize: 11, fontWeight: selMonthIdx === i ? 700 : 400,
-            background: selMonthIdx === i ? COLORS.accentDim : COLORS.surface,
-            border: `1px solid ${selMonthIdx === i ? COLORS.accent : COLORS.border}`,
-            borderRadius: 6, cursor: "pointer", color: selMonthIdx === i ? COLORS.accent : COLORS.muted,
-            fontFamily: "inherit",
-          }}>
-            {mo.name.slice(0, 3)}
-          </button>
-        ))}
-      </div>
-
-      <div style={{ fontSize: 16, fontWeight: 700, color: COLORS.text, marginBottom: 4 }}>
-        Lampiran {m.name} {m.year}
-      </div>
-      <div style={{ fontSize: 11, color: COLORS.muted, marginBottom: 14 }}>{files.length} file siap digabung</div>
-
-      {/* Upload zone */}
-      <label style={{
-        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        gap: 6, border: `1.5px dashed ${COLORS.borderStrong}`, borderRadius: 10,
-        padding: "20px 16px", cursor: "pointer", marginBottom: 14, background: COLORS.bg,
-      }}>
-        <input type="file" accept=".docx" multiple style={{ display: "none" }} onChange={handleFileAdd} />
-        <div style={{ fontSize: 28, lineHeight: 1 }}>📄</div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.text }}>Klik untuk upload file LHP (.docx)</div>
-        <div style={{ fontSize: 11, color: COLORS.muted }}>Bisa pilih banyak file sekaligus · hanya .docx</div>
-      </label>
-
-      {/* File list */}
-      {files.length > 0 && (
-        <div style={{ marginBottom: 14 }}>
-          <div style={{ fontSize: 11, color: COLORS.muted, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>
-            Urutan file (atas = pertama)
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {files.map((f, i) => (
-              <div key={i} style={{
-                background: COLORS.surface, border: `1px solid ${COLORS.border}`,
-                borderRadius: 8, padding: "10px 12px",
-                display: "flex", alignItems: "center", gap: 10,
-              }}>
-                <div style={{
-                  width: 24, height: 24, borderRadius: "50%",
-                  background: COLORS.accentDim, color: COLORS.accent,
-                  fontSize: 11, fontWeight: 700,
-                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                }}>{i + 1}</div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: COLORS.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f.name}</div>
-                  <div style={{ fontSize: 10, color: COLORS.muted }}>{fmtSize(f.size)}</div>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                  <button onClick={() => handleMoveUp(i)} disabled={i === 0} style={{ background: "none", border: `1px solid ${COLORS.border}`, borderRadius: 3, padding: "1px 6px", cursor: i === 0 ? "default" : "pointer", color: i === 0 ? COLORS.border : COLORS.muted, fontSize: 10, fontFamily: "inherit", lineHeight: 1.2 }}>▲</button>
-                  <button onClick={() => handleMoveDown(i)} disabled={i >= files.length-1} style={{ background: "none", border: `1px solid ${COLORS.border}`, borderRadius: 3, padding: "1px 6px", cursor: i >= files.length-1 ? "default" : "pointer", color: i >= files.length-1 ? COLORS.border : COLORS.muted, fontSize: 10, fontFamily: "inherit", lineHeight: 1.2 }}>▼</button>
-                </div>
-                <button onClick={() => handleRemoveFile(i)} style={{ background: "none", border: "none", color: COLORS.danger, cursor: "pointer", fontSize: 16, padding: "2px 6px", fontFamily: "inherit", lineHeight: 1 }} title="Hapus">✕</button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {error && <div style={{ ...S.banner("danger"), marginBottom: 12 }}>{error}</div>}
-
-      {files.length > 0 && (
-        <button style={{ ...S.btnPrimary, opacity: loading ? 0.6 : 1 }} onClick={handleExport} disabled={loading}>
-          {loading ? `⏳ Menggabungkan ${files.length} file...` : done ? "✓ Berhasil di-download!" : `↓ Gabung ${files.length} LHP → 1 DOCX`}
-        </button>
-      )}
-
-      {done && (
-        <div style={{ ...S.banner("success"), marginTop: 10 }}>
-          ✅ File <strong>LAMPIRAN_LHP_RADIT_{m.name.toUpperCase()}_{m.year}.docx</strong> berhasil dibuat. Cover + daftar isi + {files.length} LHP digabung lengkap dengan gambar.
-        </div>
-      )}
-
-      {files.length === 0 && (
-        <div style={{ textAlign: "center", padding: "40px 20px", background: COLORS.surface, border: `1px solid ${COLORS.border}`, borderRadius: 10 }}>
-          <div style={{ fontSize: 36, marginBottom: 8 }}>📎</div>
-          <div style={{ fontSize: 14, fontWeight: 600, color: COLORS.text, marginBottom: 4 }}>Belum ada file</div>
-          <div style={{ fontSize: 12, color: COLORS.muted, lineHeight: 1.5 }}>Buat LHP di tab <strong>Form LHP</strong> → download .docx → upload di sini.</div>
-        </div>
-      )}
-
-      {files.length > 0 && (
-        <div style={{ ...S.banner("warning"), marginTop: 12 }}>
-          💡 Semua gambar/logo di dalam file LHP akan ikut tergabung. Atur urutan dengan ▲▼ sebelum export.
-        </div>
-      )}
-    </div>
-  );
-}
 
 // ─── REMINDER SYSTEM ──────────────────────────────────────────────────────────
 
@@ -2638,7 +1829,6 @@ function ReminderBanner({ checked, onGoToTracker }) {
 export default function App() {
   const [tab, setTab] = useState("tracker");
   const [checked, setChecked] = useState({});
-  const [monthExtras, setMonthExtras] = useState({}); // { [monthKey]: { nilaiPengasuh, teguran: [] } }
 
   useNotificationPermission();
   useDeadlineNotifications(checked);
@@ -2647,10 +1837,6 @@ export default function App() {
     try {
       const saved = localStorage.getItem("nsp_checked_v2");
       if (saved) setChecked(JSON.parse(saved));
-    } catch (_) {}
-    try {
-      const saved = localStorage.getItem("nsp_month_extras_v1");
-      if (saved) setMonthExtras(JSON.parse(saved));
     } catch (_) {}
   }, []);
 
@@ -2662,33 +1848,22 @@ export default function App() {
     });
   }, []);
 
-  const handleUpdateExtras = useCallback((monthKey, updates) => {
-    setMonthExtras((prev) => {
-      const next = { ...prev, [monthKey]: { ...prev[monthKey], ...updates } };
-      try { localStorage.setItem("nsp_month_extras_v1", JSON.stringify(next)); } catch (_) {}
-      return next;
-    });
-  }, []);
-
   const tabs = [
     { id: "tracker", label: "Tracker Bulanan" },
-    { id: "total", label: "📊 Total NSP" },
     { id: "nsp", label: "Cek NSP" },
     { id: "form", label: "Form LHP" },
-    { id: "lampiran", label: "📎 Lampiran" },
-    { id: "asisten", label: "✨ Asisten" },
   ];
 
   return (
     <div style={S.app}>
       <div style={S.header}>
-        <div style={S.headerSub}>RESIMEN KORPS TARUNA DAN SISWA · DETASEMEN TK II/59/BD</div>
+        <div style={S.headerSub}>RESIMEN KORPS TARUNA DAN SISWA · DETASEMEN TK III/60/BD</div>
         <div style={S.headerTitle}>Tracker NSP &amp; LHP — {TARUNA.nama}</div>
       </div>
 
-      <div style={{ ...S.tabs, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+      <div style={S.tabs}>
         {tabs.map((t) => (
-          <button key={t.id} style={{ ...S.tab(tab === t.id), whiteSpace: "nowrap" }} onClick={() => setTab(t.id)}>
+          <button key={t.id} style={S.tab(tab === t.id)} onClick={() => setTab(t.id)}>
             {t.label}
           </button>
         ))}
@@ -2697,11 +1872,8 @@ export default function App() {
       <div style={S.content}>
         <ReminderBanner checked={checked} onGoToTracker={() => setTab("tracker")} />
         {tab === "tracker" && <TrackerPage checked={checked} onToggle={handleToggle} />}
-        {tab === "total" && <TotalNSPPage checked={checked} monthExtras={monthExtras} onUpdateExtras={handleUpdateExtras} />}
         {tab === "nsp" && <NSPPage checked={checked} />}
         {tab === "form" && <FormPage />}
-        {tab === "lampiran" && <LampiranPage />}
-        {tab === "asisten" && <AssistantPage />}
       </div>
     </div>
   );
